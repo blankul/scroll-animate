@@ -1,33 +1,22 @@
 .index {
   width: 100vw;
   height: 100vh;
-  :global {
-    .fl {
-      float: left;
-      width: 50%;
-      height: 100%;
-      position: relative;
-      cursor: pointer;
-      &:first-child {
-        background-color: #111;
-        h1 {
-          color: #fff;
-        }
-      }
-      &:last-child {
-        background-color: #fff;
-        h1 {
-          color: #111;
-        }
-      }
-      h1 {
-        font-size: 45px;
-        position: absolute;
-        width: 100%;
-        text-align: center;
-        top: 50%;
-        transform: translateY(-50%);
-      }
+  h1 {
+    text-align: center;
+    margin: 0;
+    height: 33.333333vh;
+    line-height: 33.333333vh;
+    font-size: 16vh;
+  }
+  a {
+    text-decoration: none;
+    &:nth-child(even) h1 {
+      background-color: #fff;
+      color: #111;
+    }
+    &:nth-child(odd) h1 {
+      background-color: #111;
+      color: #fff;
     }
   }
 }

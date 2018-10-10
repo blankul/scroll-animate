@@ -13,8 +13,8 @@ export default class ScrollAnimateItem extends Component {
     this.startIndex = this.fooEl.offsetTop;
   }
 
-  UNSAFE_componentWillReceiveProps({ currentScrollIndex }) {
-    const currentIndex = currentScrollIndex;
+  UNSAFE_componentWillReceiveProps({ scrolltop }) {
+    const currentIndex = scrolltop;
     const { startIndex } = this;
     const endIndex =
       startIndex + this.fooEl.offsetHeight - this.el.offsetHeight;

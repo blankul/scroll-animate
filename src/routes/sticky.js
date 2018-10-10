@@ -1,10 +1,11 @@
 import React from "react";
-import ScrollAnimate, { ItemAbsolute as ScrollItem } from "../components/ScrollAnimate";
+import ScrollAnimate, { ItemSticky as ScrollItem } from "../components/ScrollAnimate";
 import styles from "./IndexPage.less";
 
 const AnimateItem = ({ process }) => (
   <h1 style={{ textAlign: "center", marginTop: "100px" }}>
-    process: {(process * 100) | 0}%
+    process: 
+    {(process * 100) | 0}%
   </h1>
 );
 
@@ -28,7 +29,6 @@ const custom = (
 export default class Test extends React.Component {
   render() {
     return (
-      // <ScrollAnimate style={{ height: '600px', borderBottom: '1px solid #999' }}>
       <ScrollAnimate>
         {custom}
         <ScrollItem style={{ backgroundColor: "#a0d8da" }} scrollDistance={6}>

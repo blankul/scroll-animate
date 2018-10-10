@@ -4,7 +4,7 @@ import styles from "./styles.less";
 
 export default class ScrollAnimateWrapper extends React.Component {
   static childContextTypes = {
-    currentScrollIndex: PropTypes.number
+    scrolltop: PropTypes.number
   };
 
   constructor(props) {
@@ -13,21 +13,21 @@ export default class ScrollAnimateWrapper extends React.Component {
   }
 
   state = {
-    currentScrollIndex: 0
+    scrolltop: 0
   };
 
   getChildContext() {
-    const { currentScrollIndex } = this.state;
-    return { currentScrollIndex };
+    const { scrolltop } = this.state;
+    return { scrolltop };
   }
 
   handleScroll = e => {
     const { target } = e;
-    this.setState({ currentScrollIndex: target.scrollTop });
+    this.setState({ scrolltop: target.scrollTop });
   };
 
   render() {
-    const { currentScrollIndex } = this.state;
+    const { scrolltop } = this.state;
     const { children, ...props } = this.props;
 
     return (
@@ -39,7 +39,7 @@ export default class ScrollAnimateWrapper extends React.Component {
       >
         {children &&
           React.Children.map(children, child =>
-            React.cloneElement(child, { currentScrollIndex })
+            React.cloneElement(child, { scrolltop })
           )}
       </div>
     );

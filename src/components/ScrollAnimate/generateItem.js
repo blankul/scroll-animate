@@ -17,8 +17,8 @@ export default function(cfg = {}) {
 
       state = {};
 
-      UNSAFE_componentWillReceiveProps({ currentScrollIndex }) {
-        console.log({ currentScrollIndex });
+      UNSAFE_componentWillReceiveProps({ scrolltop }) {
+        console.log({ scrolltop });
       }
 
       render() {

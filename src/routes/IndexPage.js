@@ -13,16 +13,15 @@ export default class IndexPage extends React.Component {
   render() {
     return (
       <div className={styles.index}>
-        <div className="fl">
-          <Link to="/absolute">
-            <h1>absolute版</h1>
-          </Link>
-        </div>
-        <div className="fl">
-          <Link to="/fixed">
-            <h1>fixed版</h1>
-          </Link>
-        </div>
+        <Link to="/absolute">
+          <h1>absolute版</h1>
+        </Link>
+        <Link to="/fixed">
+          <h1>fixed版</h1>
+        </Link>
+        <Link to="/sticky">
+          <h1>sticky版</h1>
+        </Link>
       </div>
     );
   }
