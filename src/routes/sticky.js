@@ -1,10 +1,14 @@
 import React from "react";
-import ScrollAnimate, { ItemSticky as ScrollItem } from "../components/ScrollAnimate";
+import ScrollAnimate, {
+  ItemSticky as ScrollItem
+} from "../components/ScrollAnimate";
+import Seek1 from "../components/AnimeItem/Seek1.js";
+import Seek2 from "../components/AnimeItem/Seek2.js";
 import styles from "./IndexPage.less";
 
 const AnimateItem = ({ process }) => (
   <h1 style={{ textAlign: "center", marginTop: "100px" }}>
-    process: 
+    process:
     {(process * 100) | 0}%
   </h1>
 );
@@ -31,14 +35,16 @@ export default class Test extends React.Component {
     return (
       <ScrollAnimate>
         {custom}
-        <ScrollItem style={{ backgroundColor: "#a0d8da" }} scrollDistance={6}>
+        <ScrollItem style={{ backgroundColor: "#a0d8da" }} scrollDistance={4}>
           <AnimateItem />
-          <h2 style={{ textAlign: "center" }}>scrollDistance: 6</h2>
+          <h2 style={{ textAlign: "center" }}>scrollDistance: 4</h2>
+          <Seek1 />
         </ScrollItem>
         {custom}
-        <ScrollItem style={{ backgroundColor: "#999" }} scrollDistance={3}>
+        <ScrollItem style={{ backgroundColor: "#999" }} scrollDistance={4}>
           <AnimateItem />
-          <h2 style={{ textAlign: "center" }}>scrollDistance: 3</h2>
+          <h2 style={{ textAlign: "center" }}>scrollDistance: 4</h2>
+          <Seek2 />
         </ScrollItem>
         {custom}
         {custom}

@@ -63,3 +63,22 @@
   border-radius: 8px;
   background-color: rgb(97, 97, 206);
 }
+
+@keyframes dong {
+  from {
+    margin-left: 0;
+    opacity: 0.5;
+  }
+  to {
+    margin-left: 600px;
+    margin-top: 400px;
+    opacity: 1;
+    width: 100px;
+  }
+}
+
+.animate {
+  animation: dong 20s linear;
+  animation-play-state: running;
+  animation-play-state: paused;
+}
