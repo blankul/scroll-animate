@@ -7,9 +7,12 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "better-scroll": "^1.13.2",
     "dva": "^2.4.0",
     "history": "^4.7.2",
     "lodash": "^4.17.11",
+    "prop-types": "^15.6.2",
+    "rc-scroll-anim": "^2.5.5",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
