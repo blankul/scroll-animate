@@ -14,7 +14,6 @@ export default class Seek2 extends React.Component {
   }
 
   UNSAFE_componentWillReceiveProps({ process }) {
-    console.log(process);
     this.seekAnim.seek(this.seekAnim.duration * process);
   }
 

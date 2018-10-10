@@ -20,7 +20,7 @@ export default class IndexPage extends React.Component {
           <h1>fixed版</h1>
         </Link>
         <Link to="/sticky">
-          <h1>sticky版</h1>
+          <h1>sticky版(最终版)</h1>
         </Link>
       </div>
     );
