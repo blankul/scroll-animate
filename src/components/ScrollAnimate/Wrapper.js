@@ -28,13 +28,14 @@ export default class ScrollAnimateWrapper extends React.Component {
 
   render() {
     const { currentScrollIndex } = this.state;
-    const { children } = this.props;
+    const { children, ...props } = this.props;
 
     return (
       <div
         className={styles.wrapper}
         ref={el => (this.wrapperIns = el)}
         onScroll={this.handleScroll}
+        {...props}
       >
         {children &&
           React.Children.map(children, child =>

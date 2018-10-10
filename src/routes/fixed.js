@@ -1,6 +1,6 @@
 import React from "react";
-import ScrollAnimate, { Item as ScrollItem } from "../components/ScrollAnimate";
-import styles from "./IndexPage.css";
+import ScrollAnimate, { ItemFixed as ScrollItem } from "../components/ScrollAnimate";
+import styles from "./IndexPage.less";
 
 const AnimateItem = ({ process }) => (
   <h1 style={{ textAlign: "center", marginTop: "100px" }}>
