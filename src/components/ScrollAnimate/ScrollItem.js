@@ -6,7 +6,7 @@ function random(start, end) {
 }
 
 function getColorItem() {
-  return random(110, 160)
+  return random(150, 180)
 }
 
 function getRandomColor() {

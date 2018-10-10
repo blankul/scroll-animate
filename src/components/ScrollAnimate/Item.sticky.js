@@ -1,14 +1,30 @@
 import React, { Component } from "react";
 import styles from "./styles.less";
 
+function random(start, end) {
+  return (Math.random() * (end - start) + start) | 0
+}
+
+function getColorItem() {
+  return random(150, 180)
+}
+
+function getRandomColor() {
+  return `rgb(${getColorItem()},${getColorItem()},${getColorItem()})`
+}
+
 export default class ScrollAnimateItem extends Component {
+  constructor(props) {
+    super(props);
+    this.el = null; // element
+    this.fooEl = null; // 占位 element
+    this.startIndex = 0; // 距离wrapper顶部的距离
+    this.bgc = getRandomColor();
+  }
+
   state = {
     process: 0
   };
-
-  el = null; // element
-  fooEl = null; // 占位 element
-  startIndex = 0; // 距离wrapper顶部的距离
 
   componentDidMount() {
     this.init();
@@ -37,7 +53,7 @@ export default class ScrollAnimateItem extends Component {
   }
 
   render() {
-    const { children, scrollDistance = 1, className, ...props } = this.props;
+    const { children, scrollDistance = 1, style, className, ...props } = this.props;
     const { process } = this.state;
 
     return (
@@ -45,8 +61,10 @@ export default class ScrollAnimateItem extends Component {
         <section
           className={styles["animate-wrapper"]}
           {...props}
+          style={{ backgroundColor: this.bgc, ...style }}
           ref={el => (this.el = el)}
         >
+          <p style={{ position: 'absolute', right: '24px', top: '8px', fontWeight: '900' }}>{`${process * +scrollDistance | 0} / ${scrollDistance}px`}</p>
           {children &&
             React.Children.map(children, child =>
               React.cloneElement(child, { process })
@@ -54,7 +72,7 @@ export default class ScrollAnimateItem extends Component {
         </section>
         <div
           className="scroll-animate-foo"
-          style={{ height: `${100 * scrollDistance}%` }}
+          style={{ height: `${scrollDistance}px` }}
           ref={el => (this.fooEl = el)}
         />
       </React.Fragment>

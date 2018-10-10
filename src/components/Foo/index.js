@@ -7,7 +7,7 @@ export default () => (
     <div className={styles.welcome} />
     <section className={styles.list}>
       <p>请随意上下滚动，观察效果</p>
-      <p>请稍微慢一点</p>
+      <p>缓慢滚动效果更佳</p>
     </section>
   </div>
 );

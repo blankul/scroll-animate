@@ -25,7 +25,7 @@ export default class Seek1 extends React.Component {
 
     this.seekAnim
       .add({
-        translateY: -200,
+        translateY: -100,
         duration: 350
       })
       .add({
@@ -39,7 +39,7 @@ export default class Seek1 extends React.Component {
         duration: 500
       })
       .add({
-        translateY: 400,
+        translateY: 500,
         scale: 2.5,
         duration: 200
       });
