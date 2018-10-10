@@ -11,7 +11,7 @@ export default class Test extends React.Component {
     return (
       <ScrollAnimate>
         <Foo />
-        <ScrollItem scrollDistance={1800}>
+        <ScrollItem scrollDistance={3000}>
           <Seek1 />
         </ScrollItem>
         <Foo />
