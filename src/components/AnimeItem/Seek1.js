@@ -20,7 +20,8 @@ export default class Seek1 extends React.Component {
   initAnime = () => {
     this.seekAnim = anime.timeline({
       targets: this.el,
-      easing: "linear"
+      easing: "linear",
+      autoplay: false
     });
 
     this.seekAnim

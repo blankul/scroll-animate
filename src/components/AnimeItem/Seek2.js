@@ -25,7 +25,8 @@ export default class Seek2 extends React.Component {
       translateY: path('y'),
       rotate: path('angle'),
       easing: 'linear',
-      duration: 2000
+      duration: 2000,
+      autoplay: false
     });
   };
 
