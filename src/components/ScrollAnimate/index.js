@@ -1,7 +1,7 @@
-import Wrapper from "./Wrapper.js";
+import ScrollWrapper from "./ScrollWrapper.js";
 import ItemAbsolute from "./Item.absolute.js";
-import ItemSticky from "./Item.sticky.js";
+import AnimateWrapper from "./AnimateWrapper.js";
 import ItemFixed from "./Item.fixed.js";
 
-export default Wrapper;
-export { ItemAbsolute, ItemSticky, ItemFixed };
+export default ScrollWrapper;
+export { ItemAbsolute, AnimateWrapper, ItemFixed };

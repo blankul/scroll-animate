@@ -2,6 +2,8 @@ import React from "react";
 import anime from "animejs";
 import styles from "./styles.less";
 
+window.anime = anime;
+
 export default class Seek1 extends React.Component {
   constructor(props) {
     super(props);

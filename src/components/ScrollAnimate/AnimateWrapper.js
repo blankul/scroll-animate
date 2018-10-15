@@ -23,7 +23,8 @@ export default class ScrollAnimateItem extends Component {
   }
 
   state = {
-    process: 0
+    process: 0,
+    className: '',
   };
 
   componentDidMount() {
@@ -41,11 +42,13 @@ export default class ScrollAnimateItem extends Component {
     let process = 0;
     if (currentIndex > startIndex && currentIndex <= endIndex) {
       process = (currentIndex - startIndex) / (endIndex - startIndex);
-      this.el.style.position = "sticky";
+      this.setState({ className: '' })
+      // this.el.style.position = "sticky";
+      // this.el.style.position = "-webkit-sticky";
       this.el.style.top = "0";
     } else if (currentIndex > endIndex) {
       process = 1;
-      this.el.style.position = "relative";
+      this.setState({ className: styles['after-scroll-process'] })
       this.el.style.top = this.fooEl.offsetHeight + "px";
     }
 
@@ -54,12 +57,12 @@ export default class ScrollAnimateItem extends Component {
 
   render() {
     const { children, scrollDistance = 1, style, className, ...props } = this.props;
-    const { process } = this.state;
+    const { process, className: currentClass } = this.state;
 
     return (
       <React.Fragment>
         <section
-          className={styles["animate-wrapper"]}
+          className={`${styles["animate-wrapper"]} ${currentClass}`}
           {...props}
           style={{ backgroundColor: this.bgc, ...style }}
           ref={el => (this.el = el)}

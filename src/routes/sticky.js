@@ -1,7 +1,5 @@
 import React from "react";
-import ScrollAnimate, {
-  ItemSticky as ScrollItem
-} from "../components/ScrollAnimate";
+import ScrollAnimate, { AnimateWrapper } from "../components/ScrollAnimate";
 import Seek1 from "../components/AnimeItem/Seek1.js";
 import Seek2 from "../components/AnimeItem/Seek2.js";
 import Foo from "../components/Foo";
@@ -11,17 +9,17 @@ export default class Test extends React.Component {
     return (
       <ScrollAnimate>
         <Foo />
-        <ScrollItem scrollDistance={3000}>
+        <AnimateWrapper scrollDistance={3000}>
           <Seek1 />
-        </ScrollItem>
+        </AnimateWrapper>
         <Foo />
-        <ScrollItem scrollDistance={2400}>
+        <AnimateWrapper scrollDistance={2400}>
           <Seek2 />
-        </ScrollItem>
+        </AnimateWrapper>
         <Foo />
         <Foo />
-        <ScrollItem scrollDistance={1200}>
-        </ScrollItem>
+        <AnimateWrapper scrollDistance={1200}>
+        </AnimateWrapper>
         <Foo />
       </ScrollAnimate>
     );
